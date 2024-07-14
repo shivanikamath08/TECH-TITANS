@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="pg2.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Reset and general styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5fa;
+            line-height: 1.6;
+            background-image: linear-gradient(to bottom, #f5f5fa, #e3ecf3);
+        }
+
+        /* Header styles */
+        header {
+            background-color: #333;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 4px solid #4CAF50;
+        }
+
+        header h1 {
+            font-size: 36px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: float 3s ease-in-out infinite;
+            text-shadow: 2px 2px 4px rgba(80, 91, 243, 0.2);
+        }
+
+        /* Section styles */
+        section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .donation-category {
+            text-align: center;
+            margin-bottom: 20px;
+            flex: 0 0 calc(33.33% - 20px);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .donation-category img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Other Donations container */
+        .other-donations {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .other-donations h2 {
+            margin-bottom: 20px;
+        }
+
+        .donate-button-container .donate-button {
+            display: inline-block;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .donate-button-container .donate-button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Empowering Communities Through Donation</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#donations"><i class="fas fa-donate"></i> Donations</a></li>
+            <li><a href="#missions"><i class="fas fa-hands-helping"></i> Missions</a></li>
+            <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="donations">
+    <div class="donate">
+        <img src="/images/team/donate.png" alt="">
+        <h1>Proceed To Donate</h1>
+        <h3>Let's Make the Change</h3>
+        <br>
+        <h2>Click Here!</h2>
+        <form>
+            <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_NMymf00Ggm3O32" async></script>  
+        </form>
+    </div>
+
+    <a href="food.html" class="donation-category">
+        <img src="images/efg.jpg" alt="Food Image">
+        <div class="donate-button-container">
+            <button class="donate-button" onclick="donate('food', this)">Donate Food</button>
+        </div>
+    </a>
+
+    <a href="cloth.html" class="donation-category">
+        <img src="images/stuv.jpg" alt="Clothes Image">
+        <div class="donate-button-container">
+            <button class="donate-button" onclick="donate('clothes', this)">Donate Clothes</button>
+        </div>
+    </a>
+
+    <a href="gadgets.html" class="donation-category">
+        <img src="images/xyz.jpg" alt="Gadgets Image">
+        <div class="donate-button-container">
+            <button class="donate-button" onclick="donate('gadgets', this)">Donate Gadgets</button>
+        </div>
+    </a>
+
+    <a href="foot.html" class="donation-category">
+        <img src="images/footwares.jpg" alt="Footwear Image">
+        <div class="donate-button-container">
+            <button class="donate-button" onclick="donate('footwear', this)">Donate Footwear</button>
+        </div>
+    </a>
+
+    <!-- Other donation categories can be added here -->
+</section>
+
+
+
+<section id="missions">
+    <h2>Our Missions</h2>
+    <p>Details about your organization's missions and impact can go here.</p>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>Information about your organization and its goals.</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>How to get in touch with your organization.</p>
+</section>
+</body>
+</html>

@@ -1,0 +1,95 @@
+/* Styles for NGO Registration Form */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('registrations.jpg'); /* Add your background image URL here */
+    background-size: cover;
+    background-position: center;
+}
+
+.registration-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 60px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.registration-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #070707;
+    animation: textFadeIn 1s ease-in-out;
+}
+
+.registration-form .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    animation: textFadeIn 1s ease-in-out;
+}
+
+.registration-form input, .registration-form textarea {
+    width: calc(100% - 20px); /* Adjusted width */
+    padding: 8px; /* Reduced padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em; /* Standard font size */
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.registration-form input:focus, .registration-form textarea:focus {
+    outline: none;
+    border-color: #2f78b8;
+    box-shadow: 0 0 5px rgba(255, 106, 136, 0.5);
+}
+
+.registration-form button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #2f78b8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.registration-form button:hover {
+    background-color: #1a619f;
+    transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

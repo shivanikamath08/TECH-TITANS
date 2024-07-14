@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloth Donation Form</title>
+    <link rel="stylesheet" href="cloth.css">
+    <link rel="icon" href="images/logo.png">
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Container for the form */
+        .cloth-container {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* Form styling */
+        .cloth-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .category-options select, 
+        textarea, 
+        input[type="date"], 
+        input[type="file"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .category-options select {
+            height: 40px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Button styling */
+        .submit-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .cloth-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cloth-container">
+        <h2>ENTER CLOTH DETAILS</h2>
+        <form action="cloth.php" method="post" enctype="multipart/form-data" id="clothForm">
+            <div class="form-group">
+                <div class="category-options">
+                    <label for="category">CATEGORY:</label>
+                    <select name="category" id="category">
+                        <option value="men">Men</option>
+                        <option value="women">Women</option>
+                        <option value="kids">Kids</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="clothDescription">CLOTH DESCRIPTION:</label>
+                <textarea id="clothDescription" name="cloth_desc" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="pickupDate">PICKUP DATE:</label>
+                <input type="date" id="pickupDate" name="pickupDate" required>
+            </div>
+            <script>
+                let today = new Date().toISOString().split('T')[0];
+                document.getElementById('pickupDate').value = today;
+            </script>
+            <div class="form-group">
+                <label for="address_d">Pickup Address:</label>
+                <textarea id="address_d" name="address_d" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="clothImage">CLOTH IMAGE:</label>
+                <input type="file" id="clothImage" name="clothImage" accept="image/*" required>
+            </div>
+            <button type="submit" class="submit-btn">SUBMIT</button>
+        </form>
+    </div>
+</body>
+</html>

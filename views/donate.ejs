@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="footwear.css">
+    <link rel="icon" href="images/logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5fa;
+            line-height: 1.6;
+            background-image: linear-gradient(to bottom, #f5f5fa, #e3ecf3);
+        }
+
+        header {
+            background-color: #333;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 4px solid #4CAF50;
+        }
+
+        header h1 {
+            font-size: 36px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(80, 91, 243, 0.2);
+        }
+
+        section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 1200px;
+        }
+
+        .container-row {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .donate, .donation-category {
+            text-align: center;
+            margin: 10px;
+            flex: 0 0 calc(50% - 20px);
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .donate img, .donation-category img {
+            width: 80%;
+            max-width: 300px;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .donate-button {
+            display: inline-block;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .donate-button:hover {
+            background-color: #333;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .food-container, .cloth-container, .footwear-container {
+            display: none;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .food-container h2, .cloth-container h2, .footwear-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        textarea, input[type="date"], input[type="file"], select {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .submit-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .container-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .donate, .donation-category {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Empowering Communities Through Donation</h1>
+        <nav style="text-align: center;">
+            <ul style="display: flex; justify-content: center; list-style-type: none; padding: 0;">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://wa.me/1234567890" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/united_help_alliance?igsh=MWsxejZ1YzZycndpdw==" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="donations">
+        <div class="container-row">
+            <div class="donate">
+                <img src="/images/team/abcd.jpg" alt="Donation Image">
+                <form>
+                    <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_NMymf00Ggm3O32" async></script>
+                </form>
+            </div>
+            <div class="donation-category">
+                <img src="images/efg.jpg" alt="Food Image">
+                <div class="donate-button-container">
+                    <button class="donate-button" onclick="showFoodForm()">Donate Food</button>
+                </div>
+                <div id="foodFormContainer" class="food-container">
+                    <h2>ENTER FOOD DETAILS</h2>
+                    <form id="foodForm">
+                        <div class="form-group">
+                            <label for="category">CATEGORY:</label>
+                            <select name="category" id="category">
+                                <option value="fruit">Fruits</option>
+                                <option value="vegetable">Vegetables</option>
+                                <option value="dairy">Dairy</option>
+                                <option value="protein">Protein</option>
+                                <option value="grains">Grains</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="foodDescription">FOOD DESCRIPTION:</label>
+                            <textarea id="foodDescription" name="food_desc" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickupDate">PICKUP DATE:</label>
+                            <input type="date" id="pickupDate" name="pickupDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address_d">Pickup Address:</label>
+                            <textarea id="address_d" name="address_d" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="foodImage">FOOD IMAGE:</label>
+                            <input type="file" id="foodImage" name="foodImage" accept="image/*" required>
+                        </div>
+                        <button type="submit" class="submit-btn">SUBMIT</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="donation-category">
+            <img src="images/stuv.jpg" alt="Cloth Image">
+            <div class="donate-button-container">
+                <button class="donate-button" onclick="showClothForm()">Donate Clothes</button>
+            </div>
+            <!--<div id="clothFormContainer" class="cloth-container">
+                <div class="donation-category">
+                    <img src="images/stuv.jpg" alt="Cloth Image">
+                    <div class="donate-button-container">
+                        <button class="donate-button" onclick="showClothForm()">Donate Clothes</button>
+                    </div>-->
+                    <div id="clothFormContainer" class="cloth-container">
+                        <h2>ENTER CLOTH DETAILS</h2>
+                        <form action="cloth.ejs" method="post" enctype="multipart/form-data" id="clothForm">
+                            <div class="form-group">
+                                <div class="category-options">
+                                    <label for="category">CATEGORY:</label>
+                                    <select name="category" id="category">
+                                        <option value="men">Men</option>
+                                        <option value="women">Women</option>
+                                        <option value="kids">Kids</option>
+                                        <option value="others">Others</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="clothDescription">CLOTH DESCRIPTION:</label>
+                                <textarea id="clothDescription" name="cloth_desc" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="pickupDate">PICKUP DATE:</label>
+                                <input type="date" id="pickupDate" name="pickupDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address_d">Pickup Address:</label>
+                                <textarea id="address_d" name="address_d" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="clothImage">CLOTH IMAGE:</label>
+                                <input type="file" id="clothImage" name="clothImage" accept="image/*" required>
+                            </div>
+                            <button type="submit" class="submit-btn">SUBMIT</button>
+                        </form>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+        <!--<div class="donation-category">
+            <img src="images/footwares.jpg" alt="Footwear Image">
+            <div class="donate-button-container">
+                <button class="donate-button" onclick="showFootwearForm()">Donate Footwear</button>
+            </div>-->
+            <div id="footwearFormContainer" class="footwear-container">
+                <div class="donation-category">
+                    <img src="images/footwares.jpg" alt="Footwear Image">
+                    <div class="donate-button-container">
+                        <button class="donate-button" onclick="showFootwearForm()">Donate Footwear</button>
+                    </div>
+                    <div id="footwearFormContainer" class="footwear-container">
+                        <h2>ENTER FOOTWEAR DETAILS</h2>
+                        <form action="foot.html" method="post" enctype="multipart/form-data" id="footwearForm">
+                            <div class="form-group">
+                                <div class="category-options">
+                                    <label for="category">CATEGORY:</label>
+                                    <select name="category" id="category" style="margin-left:15px;padding:5px 10px;">
+                                        <option value="sports">Sports</option>
+                                        <option value="casual">Casual</option>
+                                        <option value="formal">Formal</option>
+                                        <option value="boots">Boots</option>
+                                        <option value="sandals">Sandals</option>
+                                        <option value="others">Others</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="footwearDescription">FOOTWEAR DESCRIPTION:</label>
+                                <textarea id="footwearDescription" name="footwear_desc" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="pickupDate">PICKUP DATE:</label>
+                                <input type="date" id="pickupDate" name="pickupDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address_d">Pickup Address:</label>
+                                <textarea id="address_d" name="address_d" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="footwearImage">FOOTWEAR IMAGE:</label>
+                                <input type="file" id="footwearImage" name="footwearImage" accept="image/*" required>
+                            </div>
+                            <button type="submit" class="submit-btn">SUBMIT</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showFoodForm() {
+            document.getElementById('foodFormContainer').style.display = 'block';
+        }
+
+        function showClothForm() {
+            document.getElementById('clothFormContainer').style.display = 'block';
+        }
+
+        function showFootwearForm() {
+            document.getElementById('footwearFormContainer').style.display = 'block';
+        }
+
+        document.getElementById('foodForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Food form submitted successfully!');
+            this.reset();
+            document.getElementById('foodFormContainer').style.display = 'none';
+        });
+        document.getElementById('clothForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Cloth form submitted successfully!');
+            this.reset();
+            document.getElementById('clothFormContainer').style.display = 'none';
+        });
+
+        document.getElementById('footwearForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Footwear form submitted successfully!');
+            this.reset();
+            document.getElementById('footwearFormContainer').style.display = 'none';
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            let today = new Date().toISOString().split('T')[0];
+            document.querySelectorAll('input[type="date"]').forEach(dateInput => {
+                dateInput.value = today;
+            });
+        });
+    </script>
+</body>
+</html>

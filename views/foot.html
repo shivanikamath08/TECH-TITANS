@@ -1,0 +1,127 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footwear Details Form</title>
+    <link rel="stylesheet" href="footwear.css">
+    <link rel="icon" href="images/logo.png">
+</head>
+<body>
+    <div class="footwear-container">
+        <h2>ENTER FOOTWEAR DETAILS</h2>
+        <form action="foot.html" method="post" enctype="multipart/form-data" id="footwearForm">
+
+            <div class="form-group">
+                <div class="category-options">
+                    <label for="category">CATEGORY:</label>
+                    <select style="margin-left:15px;padding:5px 10px;" name="category" id="category">
+                        <option value="sports">Sports</option>
+                        <option value="casual">Casual</option>
+                        <option value="formal">Formal</option>
+                        <option value="boots">Boots</option>
+                        <option value="sandals">Sandals</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="footwearDescription">FOOTWEAR DESCRIPTION:</label>
+                <textarea id="footwearDescription" name="footwear_desc" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="pickupDate">PICKUP DATE:</label>
+                <input type="date" id="pickupDate" name="pickupDate" required>
+            </div>
+            <script>
+                let today = new Date().toISOString().split('T')[0];
+                document.getElementById('pickupDate').value = today;
+            </script>
+            <div class="form-group">
+                <label for="address_d">Pickup Address:</label>
+                <textarea id="address_d" name="address_d" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="footwearImage">FOOTWEAR IMAGE:</label>
+                <input type="file" id="footwearImage" name="footwearImage" accept="image/*" required>
+            </div>
+
+            <button type="submit" class="submit-btn">SUBMIT</button>
+        </form>
+        <script src="scriptfootwear.js"></script>
+    </div>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container for the form */
+        .footwear-container {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* Form styling */
+        .footwear-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        textarea, input[type="date"], input[type="file"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        /* Button styling */
+        .submit-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .footwear-container {
+                width: 90%;
+            }
+        }
+    </style>
+</body>
+</html>
